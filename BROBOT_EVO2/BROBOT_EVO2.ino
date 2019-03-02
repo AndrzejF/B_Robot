@@ -543,7 +543,7 @@ void loop()
 		{
 			BROBOT_moveServo1(SERVO_AUX_NEUTRO);
 			// Servo2
-			if (OSCfader[2] - 0.5)=0)
+			if ((OSCfader[2] - 0.5) < 0.1)
 				BROBOT_moveServo2(SERVO2_NEUTRO);
 			else
 				BROBOT_moveServo2(SERVO2_NEUTRO + (OSCfader[2] - 0.5) * SERVO2_RANGE);
