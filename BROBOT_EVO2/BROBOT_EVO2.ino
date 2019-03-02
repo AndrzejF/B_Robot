@@ -529,9 +529,15 @@ void loop()
     if (OSCpush[0])  // Move arm
     {
       if (angle_adjusted > -40)
-        BROBOT_moveServo1(SERVO_MIN_PULSEWIDTH);
+		{
+			BROBOT_moveServo1(SERVO_MIN_PULSEWIDTH);
+			BROBOT_moveServo2(SERVO_MAX_PULSEWIDTH);
+		}
       else
-        BROBOT_moveServo1(SERVO_MAX_PULSEWIDTH);
+		{	
+			BROBOT_moveServo1(SERVO_MAX_PULSEWIDTH);
+			BROBOT_moveServo2(SERVO_MIN_PULSEWIDTH);
+		}
     }
     else
       BROBOT_moveServo1(SERVO_AUX_NEUTRO);
